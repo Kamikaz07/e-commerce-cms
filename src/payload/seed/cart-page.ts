@@ -1,6 +1,5 @@
 import type { Page } from '../payload-types'
 
-
 export const cartPage: Partial<Page> = {
   title: 'Cart',
   slug: 'cart',

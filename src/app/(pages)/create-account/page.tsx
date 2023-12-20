@@ -3,7 +3,6 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 
-
 import { RenderParams } from '../../_components/RenderParams'
 import { getMeUser } from '../../_utilities/getMeUser'
 import { mergeOpenGraph } from '../../_utilities/mergeOpenGraph'
@@ -22,13 +21,7 @@ export default async function CreateAccount() {
     <section className={classes.createAccount}>
       <div className={classes.heroImg}>
         <Link href="/">
-          <Image
-            src="/logo.png"
-            alt="logo"
-            width={100}
-            height={23}
-            className={classes.logo}
-          />
+          <Image src="/logo.png" alt="logo" width={100} height={23} className={classes.logo} />
         </Link>
       </div>
 

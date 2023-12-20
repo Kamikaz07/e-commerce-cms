@@ -3,15 +3,14 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import classes from './index.module.scss'
-
 import { usePathname } from 'next/navigation'
+
 import { Header } from '../../../../payload/payload-types'
 import { noHeaderFooterUrls } from '../../../constants'
 import { Gutter } from '../../Gutter'
 import { HeaderNav } from '../Nav'
 
-
+import classes from './index.module.scss'
 
 const HeaderComponent = ({ header }: { header: Header }) => {
   const pathname = usePathname()
@@ -28,7 +27,6 @@ const HeaderComponent = ({ header }: { header: Header }) => {
         </Link>
 
         <HeaderNav header={header} />
-        
       </Gutter>
     </nav>
   )

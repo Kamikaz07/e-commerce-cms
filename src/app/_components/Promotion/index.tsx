@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 import classes from './index.module.scss'
 
@@ -11,13 +11,13 @@ const Promotion = () => {
     seconds: 0,
   })
 
-  const targetDate = new Date()
-  targetDate.setDate(targetDate.getDate() + 3)
+  const targetDateRef = useRef(new Date())
+  targetDateRef.current.setDate(targetDateRef.current.getDate() + 3)
 
   useEffect(() => {
     const timerInterval = setInterval(() => {
       const currentTime = new Date()
-      const timeDifference = Math.max(Number(targetDate) - Number(currentTime), 0)
+      const timeDifference = Math.max(Number(targetDateRef) - Number(currentTime), 0)
 
       const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24))
       const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))

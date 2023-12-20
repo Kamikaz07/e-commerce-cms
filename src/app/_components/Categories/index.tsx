@@ -19,7 +19,6 @@ const Categories = ({ categories }: { categories: Category[] }) => {
           return <CategoryCard key={category.id} category={category} />
         })}
       </div>
-    
     </section>
   )
 }
