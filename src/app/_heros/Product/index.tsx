@@ -1,3 +1,5 @@
+'use client'
+
 import React, { Fragment } from 'react'
 
 import { Category, Product } from '../../../payload/payload-types'
@@ -7,6 +9,18 @@ import { Media } from '../../_components/Media'
 import { Price } from '../../_components/Price'
 
 import classes from './index.module.scss'
+
+const StarRating = ({ rating }) => {
+  return (
+    <div>
+      {[...Array(5)].map((_, index) => (
+        <span key={index} className={index < rating ? classes.filledStar : classes.emptyStar}>
+          &#9733;
+        </span>
+      ))}
+    </div>
+  )
+}
 
 export const ProductHero: React.FC<{
   product: Product
@@ -42,6 +56,10 @@ export const ProductHero: React.FC<{
             })}
           </div>
           <p className={classes.stock}> In stock</p>
+        </div>
+
+        <div className={classes.rating}>
+          <StarRating rating={product.rating} />
         </div>
 
         <Price product={product} button={false} />

@@ -141,6 +141,14 @@ const Products: CollectionConfig = {
         }
       },
     },
+    {
+      name: 'rating',
+      type: 'number',
+      label: 'Rating',
+      min: 0,
+      max: 5,
+      required: false,
+    },
     slugField(),
     {
       name: 'skipSync',

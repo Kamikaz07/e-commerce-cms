@@ -1277,6 +1277,7 @@ type Product {
   paywall: [Product_Paywall!]
   categories: [Category!]
   relatedProducts: [Product!]
+  rating: Float
   slug: String
   skipSync: Boolean
   meta: Product_Meta
@@ -3603,6 +3604,7 @@ input Product_where {
   enablePaywall: Product_enablePaywall_operator
   categories: Product_categories_operator
   relatedProducts: Product_relatedProducts_operator
+  rating: Product_rating_operator
   slug: Product_slug_operator
   skipSync: Product_skipSync_operator
   meta__title: Product_meta__title_operator
@@ -3677,6 +3679,16 @@ input Product_relatedProducts_operator {
   in: [JSON]
   not_in: [JSON]
   all: [JSON]
+  exists: Boolean
+}
+
+input Product_rating_operator {
+  equals: Float
+  not_equals: Float
+  greater_than_equal: Float
+  greater_than: Float
+  less_than_equal: Float
+  less_than: Float
   exists: Boolean
 }
 
@@ -3777,6 +3789,7 @@ input Product_where_and {
   enablePaywall: Product_enablePaywall_operator
   categories: Product_categories_operator
   relatedProducts: Product_relatedProducts_operator
+  rating: Product_rating_operator
   slug: Product_slug_operator
   skipSync: Product_skipSync_operator
   meta__title: Product_meta__title_operator
@@ -3798,6 +3811,7 @@ input Product_where_or {
   enablePaywall: Product_enablePaywall_operator
   categories: Product_categories_operator
   relatedProducts: Product_relatedProducts_operator
+  rating: Product_rating_operator
   slug: Product_slug_operator
   skipSync: Product_skipSync_operator
   meta__title: Product_meta__title_operator
@@ -3830,6 +3844,7 @@ type ProductsDocAccessFields {
   paywall: ProductsDocAccessFields_paywall
   categories: ProductsDocAccessFields_categories
   relatedProducts: ProductsDocAccessFields_relatedProducts
+  rating: ProductsDocAccessFields_rating
   slug: ProductsDocAccessFields_slug
   skipSync: ProductsDocAccessFields_skipSync
   meta: ProductsDocAccessFields_meta
@@ -4042,6 +4057,29 @@ type ProductsDocAccessFields_relatedProducts_Update {
 }
 
 type ProductsDocAccessFields_relatedProducts_Delete {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_rating {
+  create: ProductsDocAccessFields_rating_Create
+  read: ProductsDocAccessFields_rating_Read
+  update: ProductsDocAccessFields_rating_Update
+  delete: ProductsDocAccessFields_rating_Delete
+}
+
+type ProductsDocAccessFields_rating_Create {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_rating_Read {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_rating_Update {
+  permission: Boolean!
+}
+
+type ProductsDocAccessFields_rating_Delete {
   permission: Boolean!
 }
 
@@ -4351,6 +4389,7 @@ type ProductVersion_Version {
   paywall: [ProductVersion_Version_Paywall!]
   categories: [Category!]
   relatedProducts: [Product!]
+  rating: Float
   slug: String
   skipSync: Boolean
   meta: ProductVersion_Version_Meta
@@ -4559,6 +4598,7 @@ input versionsProduct_where {
   version__enablePaywall: versionsProduct_version__enablePaywall_operator
   version__categories: versionsProduct_version__categories_operator
   version__relatedProducts: versionsProduct_version__relatedProducts_operator
+  version__rating: versionsProduct_version__rating_operator
   version__slug: versionsProduct_version__slug_operator
   version__skipSync: versionsProduct_version__skipSync_operator
   version__meta__title: versionsProduct_version__meta__title_operator
@@ -4645,6 +4685,16 @@ input versionsProduct_version__relatedProducts_operator {
   in: [JSON]
   not_in: [JSON]
   all: [JSON]
+  exists: Boolean
+}
+
+input versionsProduct_version__rating_operator {
+  equals: Float
+  not_equals: Float
+  greater_than_equal: Float
+  greater_than: Float
+  less_than_equal: Float
+  less_than: Float
   exists: Boolean
 }
 
@@ -4774,6 +4824,7 @@ input versionsProduct_where_and {
   version__enablePaywall: versionsProduct_version__enablePaywall_operator
   version__categories: versionsProduct_version__categories_operator
   version__relatedProducts: versionsProduct_version__relatedProducts_operator
+  version__rating: versionsProduct_version__rating_operator
   version__slug: versionsProduct_version__slug_operator
   version__skipSync: versionsProduct_version__skipSync_operator
   version__meta__title: versionsProduct_version__meta__title_operator
@@ -4799,6 +4850,7 @@ input versionsProduct_where_or {
   version__enablePaywall: versionsProduct_version__enablePaywall_operator
   version__categories: versionsProduct_version__categories_operator
   version__relatedProducts: versionsProduct_version__relatedProducts_operator
+  version__rating: versionsProduct_version__rating_operator
   version__slug: versionsProduct_version__slug_operator
   version__skipSync: versionsProduct_version__skipSync_operator
   version__meta__title: versionsProduct_version__meta__title_operator
@@ -9241,6 +9293,7 @@ type ProductsFields {
   paywall: ProductsFields_paywall
   categories: ProductsFields_categories
   relatedProducts: ProductsFields_relatedProducts
+  rating: ProductsFields_rating
   slug: ProductsFields_slug
   skipSync: ProductsFields_skipSync
   meta: ProductsFields_meta
@@ -9453,6 +9506,29 @@ type ProductsFields_relatedProducts_Update {
 }
 
 type ProductsFields_relatedProducts_Delete {
+  permission: Boolean!
+}
+
+type ProductsFields_rating {
+  create: ProductsFields_rating_Create
+  read: ProductsFields_rating_Read
+  update: ProductsFields_rating_Update
+  delete: ProductsFields_rating_Delete
+}
+
+type ProductsFields_rating_Create {
+  permission: Boolean!
+}
+
+type ProductsFields_rating_Read {
+  permission: Boolean!
+}
+
+type ProductsFields_rating_Update {
+  permission: Boolean!
+}
+
+type ProductsFields_rating_Delete {
   permission: Boolean!
 }
 
@@ -12181,6 +12257,7 @@ input mutationProductInput {
   paywall: JSON
   categories: [String]
   relatedProducts: [String]
+  rating: Float
   slug: String
   skipSync: Boolean
   meta: mutationProduct_MetaInput
@@ -12210,6 +12287,7 @@ input mutationProductUpdateInput {
   paywall: JSON
   categories: [String]
   relatedProducts: [String]
+  rating: Float
   slug: String
   skipSync: Boolean
   meta: mutationProductUpdate_MetaInput

@@ -38,7 +38,7 @@
 .categoryWrapper {
   display: flex;
   justify-content: flex-start;
-  margin-bottom: 16px;
+  margin-bottom: 5px;
   margin-top: 8px;
 }
 
@@ -57,4 +57,18 @@
 
 .description {
   padding: 30px 0;
+}
+
+.rating {
+  margin-bottom:10px;
+}
+
+.filledStar {
+  color: gold;
+  cursor: pointer;
+}
+
+.emptyStar {
+  color: var(--theme); 
+  cursor: pointer;
 }

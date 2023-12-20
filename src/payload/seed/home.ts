@@ -15,7 +15,7 @@ export const home: Partial<Page> = {
       {
         children: [
           {
-            text: 'Payload E-Commerce Store',
+            text: 'KamiWeb Store Pro',
           },
         ],
         type: 'h1',
