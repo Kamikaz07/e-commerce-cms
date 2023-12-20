@@ -7,8 +7,8 @@ export const staticHome: Page = {
   createdAt: '',
   updatedAt: '',
   meta: {
-    title: 'Payload E-Commerce Template',
-    description: 'An open-source e-commerce store built with Payload and Next.js.',
+    title: 'KamiWeb Store Pro',
+    description: 'An e-commerce store built with Payload and Next.js.',
   },
   hero: {
     type: 'lowImpact',
@@ -16,7 +16,7 @@ export const staticHome: Page = {
       {
         children: [
           {
-            text: 'Payload E-commerce Template',
+            text: 'KamiWeb Store Pro',
           },
         ],
         type: 'h1',

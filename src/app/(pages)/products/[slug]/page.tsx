@@ -25,9 +25,13 @@ export default async function Product({ params: { slug } }) {
       collection: 'products',
       slug,
       draft: isDraftMode,
-    })
+    });
+
+    // Debugging: Imprimir os dados do produto e produtos relacionados
+    console.log("Produto carregado:", product);
+    console.log("Produtos relacionados:", product.relatedProducts);
   } catch (error) {
-    console.error(error) // eslint-disable-line no-console
+    console.error(error);
   }
 
   if (!product) {
